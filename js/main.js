@@ -33,7 +33,7 @@ input.mouseY.range = input.mouseY.end - input.mouseY.start;
 //output
 var output = {
     x: {
-        start:-80,
+        start:-100,
         end:80,
         current: 0,
     },
@@ -59,16 +59,25 @@ var handleMouseMove = function (event){
     input.mouseY.fraction = (input.mouseY.current - input.mouseY.start) / input.mouseY.range;
 
     //output x
-    output.x.current = output.x.end - (input.mouseX.fraction * output.x.range); //does opposite
+    output.x.current = output.x.end - (input.mouseX.fraction * output.x.range);
+    output.x.opposite = output.x.start + (input.mouseX.fraction * output.x.range); //does opposite
     //output.x.current = output.x.start + (input.mouseX.fraction * output.x.range); //follows mouse
 
     //output y
     output.y.current = output.y.end - (input.mouseY.fraction * output.y.range);
+    output.y.opposite = output.y.start + (input.mouseX.fraction * output.x.range);
 
     // apply output to html
     pupilsArray.forEach(function(pupil, i){
        // pupil.style.transform = 'translateX(75px)'; static value
-     pupil.style.transform = 'translate('+output.x.current+'px, '+output.y.current+'px)';
+     
+
+     if (i=== 0){
+        pupil.style.transform = 'translate('+output.x.opposite+'px, '+output.y.current+'px)'
+     }else{
+        pupil.style.transform = 'translate('+output.x.current+'px, '+output.y.current+'px)'
+
+     }
     
 
     });
