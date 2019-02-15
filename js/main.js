@@ -5,9 +5,6 @@ var item = document.getElementsByClassName('item');
 //turn into array instead of an HTMLcollection so we can work with the elements
 var itemArray = Array.from(item);
 
-//console.log('pupilsArray', pupilsArray)
-
-
 
 
 //input setup
@@ -72,11 +69,13 @@ var handleMouseMove = function (event){
         var depth = parseFloat(item.dataset.depth, 10); //parseFloat converts info into a number, put the ,10 to make it a decimal system
         var itemOutput = {
           x: output.x.current -  (output.x.current * depth), //math is a thing
-          y: output.y.current -  (output.y.current * depth)
+          y: output.y.current -  (output.y.current * depth),
+          zIndex: 10000 - 10000 * depth // if our depth is 1, z-index will be 0
        };
         console.log(i, 'depth', depth )
      
     //the magic
+        item.style.zIndex = itemOutput.zIndex;
         item.style.transform = 'translate('+itemOutput.x+'px, '+itemOutput.y+'px)';
 
     
