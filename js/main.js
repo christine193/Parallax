@@ -1,9 +1,9 @@
 //html elements
 
-var pupils = document.getElementsByClassName('pupil');
+var item = document.getElementsByClassName('item');
 
 //turn into array instead of an HTMLcollection so we can work with the elements
-var pupilsArray = Array.from(pupils);
+var itemArray = Array.from(item);
 
 //console.log('pupilsArray', pupilsArray)
 
@@ -34,12 +34,12 @@ input.mouseY.range = input.mouseY.end - input.mouseY.start;
 var output = {
     x: {
         start:-100,
-        end:80,
+        end:100,
         current: 0,
     },
     y:{
-        start:-120,
-        end:60,
+        start:-100,
+        end:100,
         current: 0,
     },
 };
@@ -60,24 +60,25 @@ var handleMouseMove = function (event){
 
     //output x
     output.x.current = output.x.end - (input.mouseX.fraction * output.x.range);
-    output.x.opposite = output.x.start + (input.mouseX.fraction * output.x.range); //does opposite
     //output.x.current = output.x.start + (input.mouseX.fraction * output.x.range); //follows mouse
 
     //output y
     output.y.current = output.y.end - (input.mouseY.fraction * output.y.range);
-    output.y.opposite = output.y.start + (input.mouseX.fraction * output.x.range);
 
-    // apply output to html
-    pupilsArray.forEach(function(pupil, i){
-       // pupil.style.transform = 'translateX(75px)'; static value
+
+    // apply output to html //
+    itemArray.forEach(function(item, i){
+       
+        var depth = parseFloat(item.dataset.depth, 10); //parseFloat converts info into a number, put the ,10 to make it a decimal system
+        var itemOutput = {
+          x: output.x.current -  (output.x.current * depth), //math is a thing
+          y: output.y.current -  (output.y.current * depth)
+       };
+        console.log(i, 'depth', depth )
      
+    //the magic
+        item.style.transform = 'translate('+itemOutput.x+'px, '+itemOutput.y+'px)';
 
-     if (i=== 0){
-        pupil.style.transform = 'translate('+output.x.opposite+'px, '+output.y.current+'px)'
-     }else{
-        pupil.style.transform = 'translate('+output.x.current+'px, '+output.y.current+'px)'
-
-     }
     
 
     });

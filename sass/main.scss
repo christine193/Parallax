@@ -5,79 +5,21 @@
 }
 
 body{
-    background: lightgreen;
+    background: lightpink;
     height:100vh;
     overflow:hidden;;
 }
 
-.eye {
-    background:white;
+.item {
+    background-color:black;
     height:200px;
     width:200px;
-    border-radius:50%;
+    //border-radius:50%;
     position: absolute;
     left:50%;
     top:50%;
     margin-top:-100px;
     margin-left:-100px;
-    overflow: hidden;
-    z-index:1000;
+   // z-index:1000;
 
 }
-
-.pupil{
-    position: absolute;
-    background:black;
-    width:80px;
-    height:80px;
-    border-radius:50%;
-    left:50%;
-    top:50%;
-    margin-top:-20px;
-    margin-left:-20px;
-
-    }
-    .highlight{
-        position: absolute;
-        background-color:white;
-        width:30px;
-        height:30px;
-        border-radius:50%;
-        //left:50%;
-        //top:50%;
-        z-index:2000;
-
-    }
-
-    .eye1{
-        margin-left:-225px;
-    }
-
-    .eye2{
-        margin-left:25px;
-    }
-
-    .orange{
-        position: absolute;
-        height:500px;
-        width:500px;
-        border-radius:50%;
-        left:50%;
-        top:50%;
-        margin-top:-100px;
-        margin-left:-250px;
-        background-color:orange;
-    }
-
-    .mouth{
-        position: absolute;
-        background:orangered;
-        width:30px;
-        height:30px;
-        border-radius:50%;
-        left:50%;
-        top:50%;
-        margin-top:250px;
-  
-
-    }
