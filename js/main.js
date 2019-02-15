@@ -30,13 +30,13 @@ input.mouseY.range = input.mouseY.end - input.mouseY.start;
 //output
 var output = {
     x: {
-        start:-100,
-        end:100,
+        start:-180,
+        end:180,
         current: 0,
     },
     y:{
-        start:-100,
-        end:100,
+        start:-200,
+        end:200,
         current: 0,
     },
 };
@@ -56,12 +56,12 @@ var handleMouseMove = function (event){
     input.mouseY.fraction = (input.mouseY.current - input.mouseY.start) / input.mouseY.range;
 
     //output x
-    output.x.current = output.x.end - (input.mouseX.fraction * output.x.range);
-    //output.x.current = output.x.start + (input.mouseX.fraction * output.x.range); //follows mouse
+    //output.x.current = output.x.end - (input.mouseX.fraction * output.x.range);
+    output.x.current = output.x.start + (input.mouseX.fraction * output.x.range); //follows mouse
 
     //output y
-    output.y.current = output.y.end - (input.mouseY.fraction * output.y.range);
-
+    //output.y.current = output.y.end - (input.mouseY.fraction * output.y.range);
+    output.y.current = output.y.start + (input.mouseY.fraction * output.y.range);
 
     // apply output to html //
     itemArray.forEach(function(item, i){
