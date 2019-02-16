@@ -10,11 +10,18 @@ body {
 }
 
 .item {
+  background-color: rgba(216, 112, 147, 0.422);
+  border: 1px solid white;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
   position: absolute;
   left: 50%;
   top: 50%;
   margin-top: -180px;
   margin-left: -100px;
+  transform: translate3d(-50%, -50%, 15vmin);
+  animation: sine-rotate 5s infinite;
 }
 
 h1 {
