@@ -5,21 +5,33 @@
 }
 
 body{
-    background:rgb(61, 61, 61);
+
     height:100vh;
-    overflow:hidden;;
+  
+}
+#imgBox{
+
+height:600px;
+width:600px;
+background-image:url(../images/img.jpg);
+background-size: 600px 600px;
+overflow:hidden!important;
+overflow:none!important;
+position: absolute;
+left:30%;
+top:10%;
+ 
 }
 
 .item {
 
     //border-radius:50%;
     position: absolute;
-    left:50%;
-    top:50%;
-    margin-top:-180px;
-    margin-left:-100px;
+  //  margin-top:-180px;
+  //  margin-left:-100px;
     //mix-blend-mode:multiply;
-   // z-index:1000;
+    z-index:1000;
+
 
 }
 
@@ -35,4 +47,14 @@ h1{
 .blur {
     filter:blur(1px);
     opacity:0.8 ;
+}
+
+.mix1 {
+    mix-blend-mode:hue;
+   
+}
+.mix2 {
+    mix-blend-mode:luminosity;
+   // mix-blend-mode:hard-light;
+   
 }

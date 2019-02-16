@@ -30,13 +30,13 @@ input.mouseY.range = input.mouseY.end - input.mouseY.start;
 //output
 var output = {
     x: {
-        start:-180,
-        end:180,
+        start:-15,
+        end:15,
         current: 0,
     },
     y:{
-        start:-200,
-        end:200,
+        start:-5,
+        end:5,
         current: 0,
     },
 };
@@ -56,12 +56,12 @@ var handleMouseMove = function (event){
     input.mouseY.fraction = (input.mouseY.current - input.mouseY.start) / input.mouseY.range;
 
     //output x
-    //output.x.current = output.x.end - (input.mouseX.fraction * output.x.range);
-    output.x.current = output.x.start + (input.mouseX.fraction * output.x.range); //follows mouse
+    output.x.current = output.x.end - (input.mouseX.fraction * output.x.range);
+   // output.x.current = output.x.start + (input.mouseX.fraction * output.x.range); //follows mouse
 
     //output y
-    //output.y.current = output.y.end - (input.mouseY.fraction * output.y.range);
-    output.y.current = output.y.start + (input.mouseY.fraction * output.y.range);
+output.y.current = output.y.end - (input.mouseY.fraction * output.y.range);
+   // output.y.current = output.y.start + (input.mouseY.fraction * output.y.range);
 
     // apply output to html //
     itemArray.forEach(function(item, i){
@@ -70,7 +70,7 @@ var handleMouseMove = function (event){
         var itemOutput = {
           x: output.x.current -  (output.x.current * depth), //math is a thing
           y: output.y.current -  (output.y.current * depth),
-          zIndex: 10000 - 10000 * depth // if our depth is 1, z-index will be 0
+         zIndex: 10000 - 10000 * depth // if our depth is 1, z-index will be 0
        };
         console.log(i, 'depth', depth )
      
