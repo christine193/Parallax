@@ -5,23 +5,34 @@
 
 body {
   height: 100vh;
+  background:pink;
+
+
 }
 
-#imgBox {
+#imgBox{
+  left: 30%;
+  top: 10%;
+  position:absolute;
+
+}
+
+/*#imgBox {
   height: 600px;
   width: 600px;
-  background-image: url(../images/img.jpg);
-  background-size: 600px 600px;
+  background-image: url(../images/heart.png);
+background-size: 600px 600px;
   overflow: hidden !important;
   overflow: none !important;
   position: absolute;
   left: 30%;
   top: 10%;
-}
+}*/
 
 .item {
   position: absolute;
   z-index: 1000;
+  mix-blend-mode:saturation;
 }
 
 h1 {
@@ -36,12 +47,8 @@ h1 {
   opacity: 0.8;
 }
 
-.mix1 {
-  mix-blend-mode: hue;
-}
-
-.mix2 {
-  mix-blend-mode: luminosity;
+.mix3 {
+  mix-blend-mode: soft-light;
 }
 
 /*# sourceMappingURL=main.css.map */

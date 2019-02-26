@@ -50,11 +50,17 @@ h1{
 }
 
 .mix1 {
-    mix-blend-mode:hue;
+    //mix-blend-mode:hue;
    
 }
 .mix2 {
-    mix-blend-mode:luminosity;
+   // mix-blend-mode:luminosity;
+   // mix-blend-mode:hard-light;
+   
+}
+
+.mix3 {
+    mix-blend-mode:soft-light;
    // mix-blend-mode:hard-light;
    
 }
