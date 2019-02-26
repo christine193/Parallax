@@ -7,32 +7,41 @@
 body{
 
     height:100vh;
+    background:pink;
   
 }
 #imgBox{
 
-height:600px;
-width:600px;
-background-image:url(../images/img.jpg);
-background-size: 600px 600px;
-overflow:hidden!important;
-overflow:none!important;
+width:50%;
+height:100%;
+margin-left:20px;
+float:left;
 position: absolute;
-left:30%;
-top:10%;
- 
+
 }
 
 .item {
 
-    //border-radius:50%;
     position: absolute;
-  //  margin-top:-180px;
-  //  margin-left:-100px;
-    //mix-blend-mode:multiply;
     z-index:1000;
+    margin:0 auto;
+   height:80%;
 
 
+
+}
+.front {
+   // mix-blend-mode:multiply;
+}
+
+.circle{
+    height:50px;
+    width:50px;
+    border-radius:50%;
+    background-color:rgb(253, 211, 225);
+    z-index:5000;
+    position: absolute;
+    margin-top:100px;
 }
 
 
@@ -45,22 +54,16 @@ h1{
 }
 
 .blur {
-    filter:blur(1px);
-    opacity:0.8 ;
-}
+    filter:blur(3px);
 
-.mix1 {
-    //mix-blend-mode:hue;
-   
-}
-.mix2 {
-   // mix-blend-mode:luminosity;
-   // mix-blend-mode:hard-light;
-   
 }
 
 .mix3 {
     mix-blend-mode:soft-light;
    // mix-blend-mode:hard-light;
    
+}
+
+.back{
+    z-index:1;
 }

@@ -5,34 +5,32 @@
 
 body {
   height: 100vh;
-  background:pink;
-
-
+  background: pink;
 }
 
-#imgBox{
-  left: 30%;
-  top: 10%;
-  position:absolute;
-
-}
-
-/*#imgBox {
-  height: 600px;
-  width: 600px;
-  background-image: url(../images/heart.png);
-background-size: 600px 600px;
-  overflow: hidden !important;
-  overflow: none !important;
+#imgBox {
+  width: 50%;
+  height: 100%;
+  margin-left: 20px;
+  float: left;
   position: absolute;
-  left: 30%;
-  top: 10%;
-}*/
+}
 
 .item {
   position: absolute;
   z-index: 1000;
-  mix-blend-mode:saturation;
+  margin: 0 auto;
+  height: 80%;
+}
+
+.circle {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #fdd3e1;
+  z-index: 5000;
+  position: absolute;
+  margin-top: 100px;
 }
 
 h1 {
@@ -43,12 +41,15 @@ h1 {
 }
 
 .blur {
-  filter: blur(1px);
-  opacity: 0.8;
+  filter: blur(3px);
 }
 
 .mix3 {
   mix-blend-mode: soft-light;
+}
+
+.back {
+  z-index: 1;
 }
 
 /*# sourceMappingURL=main.css.map */
